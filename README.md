@@ -18,6 +18,12 @@ A Dockerized container of [vlmcsd](https://github.com/Wind4/vlmcsd)
   `make compose`
   Run server container with auto restart, manage by docker-compose
 
+  `make clear`
+  Remove all container(s).
+
+  `make logs`
+  If has any container(s), show all container(s) logs.
+
 * Knowledge
 
     [HOW TO ACTIVE VIA KMS](https://github.com/Wind4/vlmcsd/blob/master/man/vlmcsd.7.pdf)
