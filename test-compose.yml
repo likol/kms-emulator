@@ -9,6 +9,8 @@ services:
       - ARGS=-eD -t5 -m10 -P 1688
       - PORT=1688
   test:
+    depends_on:
+      - entry
     image: likol1227/kms-emulator:latest
     environment:
       - MODE=vlmcs
