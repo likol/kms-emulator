@@ -1,0 +1,10 @@
+services:
+  entry:
+    restart: always
+    image: likol/kms-emulator:latest
+    environment:
+      - MODE=vlmcsd
+      - PORT=1688
+      - ARGS="-eD -t5 -m10"
+    ports:
+      - 1688:1688
