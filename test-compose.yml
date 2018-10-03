@@ -2,7 +2,6 @@ version: '2'
 
 services:
   entry:
-    restart: always
     image: likol1227/kms-emulator:latest
     environment:
       - MODE=vlmcsd
