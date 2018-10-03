@@ -8,5 +8,8 @@ services:
       - MODE=vlmcsd
       - ARGS=-eD -t5 -m10 -P 1688
       - PORT=1688
-    ports:
-      - 1688:1688
+  test:
+    image: likol1227/kms-emulator:latest
+    environment:
+      - MODE=vlmcs
+      - ARGS=-l4 entry
