@@ -8,6 +8,5 @@ RUN wget https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.
 && rm -f vlmcsd.tar.gz \
 && mv /opt/binaries/Linux/intel/static/vlmcsdmulti-x64-musl-static . \
 && rm -rf binaries/
-WORKDIR /opt/binaries/Linux/intel/static/
 EXPOSE $PORT
 CMD ./vlmcsdmulti-x64-musl-static $MODE $ARGS
