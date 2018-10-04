@@ -2,10 +2,12 @@ FROM alpine
 ENV MODE=vlmcsd
 ENV PORT=1688
 ENV ARGS="-eD -t5 -m10"
-ADD https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz /opt/vlmcsd.tar.gz
 WORKDIR /opt
-RUN tar x -zf vlmcsd.tar.gz
-RUN rm -f vlmcsd.tar.gz
+RUN wget https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz -O vlmcsd.tar.gz \
+&& tar x -zf vlmcsd.tar.gz \
+&& rm -f vlmcsd.tar.gz \
+&& mv /opt/binaries/Linux/intel/static/vlmcsdmulti-x64-musl-static . \
+&& rm -rf binaries/
 WORKDIR /opt/binaries/Linux/intel/static/
 EXPOSE $PORT
 CMD ./vlmcsdmulti-x64-musl-static $MODE $ARGS
